@@ -1,0 +1,17 @@
+.elements__like {
+  background: url(../../../images/Vector-heart.svg);
+  width: 22px;
+  height: 19px;
+  border: none;
+  margin-right: 5px;
+}
+
+.elements__like:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.elements__like:active {
+  background: url(../../../images/Union.svg);
+  opacity: 1;
+}
