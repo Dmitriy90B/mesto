@@ -1,4 +1,4 @@
-.popup__first-name {
+.popup__name {
   margin: 0;
   width: 100%;
   max-width: 354px;
@@ -8,17 +8,17 @@
   line-height: 17px;
   padding-bottom: 10px;
   border: none;
-  border-bottom: 1px solid #cdcdcd;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
 }
 
 @media screen and (max-width: 868px) {
-  .popup__first-name {
+  .popup__name {
     max-width: 280px;
   }
 }
 
 @media screen and (max-width: 425px) {
-  .popup__first-name {
+  .popup__name {
     max-width: 234px;
   }
 }

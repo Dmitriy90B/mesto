@@ -20,11 +20,11 @@
       <section class="profile">
         <img src="./images/image.jpg" alt="Аватар" class="profile__avatar">
         <div class="profile__user">
-          <h2 class="profile__first-name">Жак-Ив Кусто</h2>
-          <button class="profile__edit-button profile__edit-button_popup"></button>
+          <h1 class="profile__name">Жак-Ив Кусто</h2>
+          <button type="button" class="profile__edit-button profile__edit-button_popup"></button>
           <p class="profile__job">Исследователь океана</p>
         </div>
-        <button class="profile__add-button"></button>
+        <button type="button" class="profile__add-button"></button>
       </section>
 
       <section class="elements">
@@ -33,7 +33,7 @@
             <img class="elements__item" src="./images/Obskoe-more.jpg" alt="Обское море">
             <div class="elements__text">
               <h3 class="elements__title">Обское море</h3>
-              <button class="elements__like"></button>
+              <button type="button" class="elements__like"></button>
             </div>
           </li>
           <li>
@@ -76,20 +76,20 @@
     </main>
 
     <footer class="footer">
-      <h1 class="footer__text">&#169; 2020 Mesto Russia</h1>
+      <p class="footer__text">&#169; 2020 Mesto Russia</p>
     </footer>
 
-    <section class="popup popup_add">
+    <div class="popup">
       <div class="popup__container">
-        <button class="popup__close"></button>
+        <button type="button" class="popup__close"></button>
         <form name="profile" class="popup__form">
-          <p class="popup__profile">Редактировать профиль</p>
-          <input type="text" name="first-name" class="popup__first-name popup__first-name_title " maxlength =28 required/>
-          <input type="text" name="job" class="popup__job popup__job_subtitle" maxlength =58 required/>
+          <h2 class="popup__profile">Редактировать профиль</h2>
+          <input type="text" name="name" class="popup__name popup__name_profile_title" required/>
+          <input type="text" name="job" class="popup__job popup__job_profile_subtitle" required/>
           <button type="submit" class="popup__save-button">Сохранить</button >
         </form>
       </div>
-    </section>
+    </div>
   </div>
   <script src="./scripts/index.js"></script>
 </body>

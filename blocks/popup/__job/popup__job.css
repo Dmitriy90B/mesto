@@ -7,7 +7,7 @@
   line-height: 17px;
   border: none;
   padding-bottom: 10px;
-  border-bottom: 1px solid #cdcdcd;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
 }
 
 @media screen and (max-width: 868px) {
