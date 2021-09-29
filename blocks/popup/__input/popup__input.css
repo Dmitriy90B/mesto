@@ -1,24 +1,24 @@
-.popup__job {
+.popup__input {
   margin: 0;
   width: 100%;
   max-width: 354px;
-  margin-bottom: 48px;
+  margin-bottom: 29px;
   font-size: 14px;
   line-height: 17px;
+  padding-bottom: 9px;
   border: none;
-  padding-bottom: 10px;
   border-bottom: 1px solid rgba(0, 0, 0, .2);
 }
 
 @media screen and (max-width: 868px) {
-  .popup__job {
+  .popup__input {
     max-width: 280px;
   }
 }
 
 @media screen and (max-width: 425px) {
-  .popup__job {
-    max-width: 234px;
-    margin-bottom: 46px;
+  .popup__input {
+  padding-bottom: 9px;
+  max-width: 234px;
   }
 }

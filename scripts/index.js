@@ -6,16 +6,17 @@ const formElement = popup.querySelector('.popup__form');
 const popupOpenBtn = document.querySelector('.profile__edit-button_popup');
 const popupCloseBtn = popup.querySelector('.popup__close');
 
-let nameInput = formElement.querySelector('.popup__name_profile_title');
-let jobInput = formElement.querySelector('.popup__job_profile_subtitle');
+let nameInput = formElement.querySelector('.popup__input_profile_title');
+let jobInput = formElement.querySelector('.popup__input_profile_subtitle');
 
 
 function popupOpen() {
-  popup.classList.toggle('popup_opened', setPopupInputValue());
+  popup.classList.add('popup_opened');
+  setPopupInputValue();
 }
 
 function popupClose() {
-  popup.classList.toggle('popup_opened');
+  popup.classList.remove('popup_opened');
 }
 
 function setPopupInputValue() {

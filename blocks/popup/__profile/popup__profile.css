@@ -3,7 +3,7 @@
   font-weight: 900;
   font-size: 24px;
   line-height: 29px;
-  margin-bottom: 46px;
+  margin-bottom: 47px;
 }
 
 @media screen and (max-width: 868px) {
@@ -17,6 +17,6 @@
   .popup__profile {
     font-size: 18px;
     line-height: 22px;
-    margin-bottom: 72px;
+    margin-bottom: 73px;
   }
 }

@@ -8,6 +8,7 @@
   border-radius: 2px;
   padding-top: 14px;
   padding-bottom: 14px;
+  margin-top: 20px;
   width: 100%;
 }
 
@@ -20,5 +21,7 @@
   .popup__save-button {
     font-size: 14px;
     line-height: 17px;
+    margin-top: 16px;
+    padding-bottom: 15px;
   }
 }
