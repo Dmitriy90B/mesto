@@ -24,53 +24,11 @@
           <button type="button" class="profile__edit-button profile__edit-button_popup"></button>
           <p class="profile__job">Исследователь океана</p>
         </div>
-        <button type="button" class="profile__add-button"></button>
+        <button type="button" class="profile__add-button profile__add-button_popup"></button>
       </section>
 
       <section class="elements">
         <ul class="elements__items">
-          <li>
-            <img class="elements__item" src="./images/Obskoe-more.jpg" alt="Обское море">
-            <div class="elements__text">
-              <h3 class="elements__title">Обское море</h3>
-              <button type="button" class="elements__like"></button>
-            </div>
-          </li>
-          <li>
-            <img class="elements__item" src="./images/Karabula.jpg" alt="Карабула">
-            <div class="elements__text">
-              <h3 class="elements__title">Карабула</h3>
-              <button type="button" class="elements__like"></button>
-            </div>
-          </li>
-          <li>
-            <img class="elements__item" src="./images/Kareliya.jpg" alt="Карелия">
-            <div class="elements__text">
-              <h3 class="elements__title">Карелия</h3>
-              <button type="button" class="elements__like"></button>
-            </div>
-          </li>
-          <li>
-            <img class="elements__item" src="./images/Ozero-Baykal.jpg" alt="Озеро Байкал">
-            <div class="elements__text">
-              <h3 class="elements__title">Озеро Байкал</h3>
-              <button type="button" class="elements__like"></button>
-            </div>
-          </li>
-          <li>
-            <img class="elements__item" src="./images/Petrovskiy.jpg" alt="Петровский Маяк">
-            <div class="elements__text">
-              <h3 class="elements__title">Петровский Маяк</h3>
-              <button type="button" class="elements__like"></button>
-            </div>
-          </li>
-          <li>
-            <img class="elements__item" src="./images/Saratov.jpg" alt="Саратов">
-            <div class="elements__text">
-              <h3 class="elements__title">Саратов</h3>
-              <button type="button" class="elements__like"></button>
-            </div>
-          </li>
         </ul>
       </section>
     </main>
@@ -79,7 +37,7 @@
       <p class="footer__text">&#169; 2020 Mesto Russia</p>
     </footer>
 
-    <div class="popup">
+    <div class="popup popup_type_edit">
       <div class="popup__container">
         <button type="button" class="popup__close"></button>
         <form name="profile" class="popup__form">
@@ -90,7 +48,38 @@
         </form>
       </div>
     </div>
+
+    <div class="popup popup_type_add">
+      <div class="popup__container">
+        <button type="button" class="popup__close"></button>
+        <form name="profile" class="popup__form popup__form_save">
+          <h2 class="popup__profile">Новое место</h2>
+          <input type="text" name="heading" class="popup__input popup__input_profile_heading" placeholder="Название" required/>
+          <input type="text" name="link" class="popup__input popup__input_profile_link" placeholder="Ссылка на картинку" required/>
+          <button type="submit" class="popup__save-button">Создать</button >
+        </form>
+      </div>
+    </div>
+
+    <div class="popup popup_type_image">
+      <div class="popup__container popup__container_text_color">
+          <button type="button" class="popup__close"></button>
+          <img class="popup__image" src="#" alt="">
+          <h2 class="popup__subtitle"></h2>
+      </div>
+   </div>
   </div>
+
+  <template id="card">
+    <li class="elements__position">
+      <img class="elements__item" src="#" alt="image">
+      <button type="button" class="elements__trash"></button>
+      <div class="elements__text">
+        <h3 class="elements__title"></h3>
+        <button type="button" class="elements__like"></button>
+      </div>
+    </li>
+  </template>
   <script src="./scripts/index.js"></script>
 </body>
 

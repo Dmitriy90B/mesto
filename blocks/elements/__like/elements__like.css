@@ -5,6 +5,7 @@
   height: 19px;
   border: none;
   margin-right: 5px;
+  padding: 0;
 }
 
 .elements__like:hover {

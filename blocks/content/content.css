@@ -3,17 +3,4 @@
   margin: 0 auto;
 }
 
-@media screen and (max-width: 1024px) {
-  .content {
-    padding-right: 72px;
-    padding-left: 72px;
-  }
-}
-
-@media screen and (max-width: 425px) {
-  .content {
-    padding-right: 19px;
-    padding-left: 19px;
-  }
-}
 

@@ -6,6 +6,7 @@
   border-radius: 2px;
   align-self: center;
   justify-self: end;
+  padding: 0;
 }
 
 .profile__add-button:hover {
