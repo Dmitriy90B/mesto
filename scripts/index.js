@@ -43,7 +43,7 @@ function profileSubmitHandler(evt) {
   popupClose(popupEdit);
 }
 
-function openImage(imageElement) {   // открытия попап для просмотра карточек
+function openImage(imageElement) {
   imageSubtitle.textContent = imageElement.name;
   openPopupImage.setAttribute('src', imageElement.link);
   openPopupImage.setAttribute('alt', imageElement.name);
@@ -59,12 +59,12 @@ function getCard(cardElement) {
   elementsItem.addEventListener('click', () => openImage(cardElement));
 
   const likeCard = getCardElement.querySelector('.elements__like');
-  likeCard.addEventListener('click', () => {    // лайк карточки
+  likeCard.addEventListener('click', () => {
     likeToggle(likeCard);
   });
 
   const cardTrash = getCardElement.querySelector('.elements__trash');
-  cardTrash.addEventListener('click', () => {   // удаление карточки
+  cardTrash.addEventListener('click', () => {
   const card = cardTrash.closest('.elements__position');
     card.remove();
   });
@@ -104,3 +104,11 @@ openPopupAdd.addEventListener('click', () => popupOpen(popupAdd));
 closePopupAdd.addEventListener('click', () => popupClose(popupAdd));
 closePopupImage.addEventListener('click', () => popupClose(popupImage));
 popupFormCreates.addEventListener('submit', cardSubmitHandler);
+document.addEventListener('keydown', (evt) => {
+  if (evt.key === 'Escape') {
+    popupClose(popupEdit);
+    popupClose(popupAdd);
+    popupClose(popupImage);
+  }
+});
+

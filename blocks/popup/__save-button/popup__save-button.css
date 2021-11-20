@@ -6,22 +6,23 @@
   border: none;
   background-color: #000;
   border-radius: 2px;
-  padding-top: 14px;
-  padding-bottom: 14px;
-  margin-top: 20px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  margin-top: 17px;
   width: 100%;
+  cursor: pointer;
+  border: 1px solid #000;
 }
 
 .popup__save-button:hover {
   opacity: .8;
-  cursor: pointer;
 }
 
 @media screen and (max-width: 425px) {
   .popup__save-button {
     font-size: 14px;
     line-height: 17px;
-    margin-top: 16px;
+    margin-top: 14px;
     padding-bottom: 15px;
   }
 }
