@@ -19,12 +19,21 @@ const linkInput = document.querySelector('.popup__input_profile_link');
 const cardId = document.querySelector('#card');
 const cardList = document.querySelector('.elements__items');
 
+function closePopupClick(evt) {
+  const popupOpened = document.querySelector('.popup_opened');
+  if(evt.target === popupOpened) {
+    popupOpened.classList.remove('popup_opened');
+  }
+}
+
 function popupOpen(popup) {    // открытие попап
   popup.classList.add('popup_opened');
+  document.addEventListener('mousedown', closePopupClick);
 }
 
 function popupClose(popup) {   // закрытие попап
   popup.classList.remove('popup_opened');
+  document.removeEventListener('mousedown', closePopupClick);
 }
 
 function setPopupInputValue() {
@@ -111,4 +120,3 @@ document.addEventListener('keydown', (evt) => {
     popupClose(popupImage);
   }
 });
-
