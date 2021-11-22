@@ -10,21 +10,17 @@ enableValidation(validationConfig);
 
 function enableValidation() {
   const forms = Array.from(document.querySelectorAll(validationConfig.formSelector));
-
   forms.forEach(addListenerToForm);
 };
 
 function addListenerToForm(form) {
   const inputs = Array.from(form.querySelectorAll(validationConfig.inputSelector));
   const button = form.querySelector(validationConfig.submitButtonSelector);
-
   inputs.forEach(addListenerToInput);
 
   form.addEventListener('submit', (evt) => {
     evt.preventDefault();
-
     toggleButton(form, button);
-
   });
 
   form.addEventListener('input', (evt) => {
@@ -36,7 +32,6 @@ function addListenerToForm(form) {
 
 function toggleButton(form, button) {
   const isFormInvalid = !form.checkValidity();
-
   button.disabled = isFormInvalid;
   button.classList.toggle(validationConfig.inactiveButtonClass, isFormInvalid);
 };
