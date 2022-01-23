@@ -56,7 +56,7 @@ function setFormTextValue() {
   profileJob.textContent = jobInput.value;
 }
 
-function profileSubmitHandler(evt) {
+function submitHandlerProfile(evt) {
   evt.preventDefault();
   setFormTextValue();
   closePopup(popupEdit);
@@ -74,7 +74,7 @@ function addCard(cardElement) {
 
 initialCards.map(addCard);
 
-function cardSubmitHandler (evt) {
+function submitHandlerCard (evt) {
   evt.preventDefault();
   const data = {
     name: headingInput.value,
@@ -94,9 +94,9 @@ openPopupEdit.addEventListener('click', () => {
   setPopupInputValue();
   openPopup(popupEdit);
 });
-popupFormSaves.addEventListener('submit', profileSubmitHandler);
+popupFormSaves.addEventListener('submit', submitHandlerProfile);
 openPopupAdd.addEventListener('click', () => {
   openPopup(popupAdd);
   formValidationAdd.resetValidation();
 });
-popupFormCreates.addEventListener('submit', cardSubmitHandler);
+popupFormCreates.addEventListener('submit', submitHandlerCard);

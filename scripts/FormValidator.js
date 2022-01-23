@@ -1,13 +1,14 @@
 export class FormValidator {
-  constructor(validationConfig, form, button, inputs) {
+  constructor(validationConfig, form, button, inputs, element) {
     this._formSelector = validationConfig.formSelector;
-    this._inputSelector = validationConfig.inputSelector; // +++
+    this._inputSelector = validationConfig.inputSelector; //
     this._submitButtonSelector = validationConfig.submitButtonSelector;
     this._inactiveButtonClass = validationConfig.inactiveButtonClass;
-    this._inputErrorClass = validationConfig.inputErrorClass; // +++
+    this._inputErrorClass = validationConfig.inputErrorClass; //
     this._form = form;
     this._button = button;
     this._inputs = inputs;
+    this._element = element;
   };
 
   enableValidation() {
@@ -25,6 +26,7 @@ export class FormValidator {
     this._form.addEventListener('submit', (evt) => {
       evt.preventDefault();
       this._toggleButton();
+
     });
 
     this._form.addEventListener('input', (evt) => {
@@ -37,12 +39,13 @@ export class FormValidator {
   resetValidation() {
     this._form.reset();
     this._toggleButton();
-  }
+  };
 
   _toggleButton() {
     const isFormInvalid = !this._form.checkValidity();
     this._button.disabled = isFormInvalid;
     this._button.classList.toggle(this._inactiveButtonClass, isFormInvalid);
+
   };
 
   _addListenerToInput(input) {
@@ -52,14 +55,16 @@ export class FormValidator {
   };
 
   _hadleFieldValidation(evt) {
-    const element = evt.target;
-    const errorContainer = document.querySelector(`#${element.id}-error`);
+    this._element = evt.target;
+    this._errorContainer = document.querySelector(`#${this._element.id}-error`);
 
-    if (!element.validity.valid) {
-      element.classList.add(this._inputErrorClass);
+    if (!this._element.validity.valid) {
+      this._element.classList.add(this._inputErrorClass);
+      this._errorContainer.textContent = this._element.validationMessage;
+
     } else {
-      element.classList.remove(this._inputErrorClass);
+      this._element.classList.remove(this._inputErrorClass);
+      this._errorContainer.textContent = '';
     }
-    errorContainer.textContent = element.validationMessage;
   };
 }
