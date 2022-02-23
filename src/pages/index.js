@@ -1,5 +1,5 @@
 import './index.css';
-import {initialCards, validationConfig} from '../components/utils.js';
+import {initialCards, validationConfig} from '../utils/utils.js';
 import Card from '../components/Card.js';
 import FormValidator from '../components/FormValidator.js';
 import Section from '../components/Section.js';
@@ -42,7 +42,7 @@ const popupEditForm = new PopupWithForm({
   handleFormSubmit: (item) => {
     userInfo.setUserInfo(item);
     popupEditForm.close();
-    formValidationEdit.resetValidation();
+    formValidationEdit.toggleButtonState();
   }
 });
 popupEditForm.setEventListeners();
@@ -55,7 +55,7 @@ const popupAddForm = new PopupWithForm({
       name: data.heading
     }));
     popupAddForm.close();
-    formValidationAdd.resetValidation();
+    formValidationAdd.toggleButtonState();
   }
 });
 popupAddForm.setEventListeners();
@@ -74,6 +74,7 @@ openPopupEdit.addEventListener('click', () => {
   profileNameInput.value = userInfoData.name;
   profileJobInput.value = userInfoData.job;
   popupEditForm.open();
+  formValidationEdit.resetValidation();
 });
 
 openPopupAdd.addEventListener('click', () => {

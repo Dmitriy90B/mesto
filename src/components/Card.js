@@ -9,7 +9,8 @@ export default class Card {
   _getTemplate() {
     const getCardElement = document
       .querySelector(this._cardSelector)
-      .content.cloneNode(true);
+      .content.querySelector('.elements__position')
+      .cloneNode(true);
     return getCardElement;
   }
 
@@ -32,7 +33,8 @@ export default class Card {
   }
 
   _deleteByTrash() {
-    this._cardTrash.closest('.elements__position').remove();
+    this._element.remove();
+    this._element = null;
   }
 
   _setEventListeners() {
