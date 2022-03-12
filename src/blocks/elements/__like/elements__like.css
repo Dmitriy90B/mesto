@@ -1,10 +1,9 @@
 .elements__like {
-  background: url(../../../images/Vector-heart.svg);
+  background: url(../../../images/Vector-heart.svg) no-repeat;
   background-size: 22px;
   width: 22px;
   height: 19px;
   border: none;
-  margin-right: 5px;
   padding: 0;
 }
 
@@ -14,6 +13,6 @@
 }
 
 .elements__like:active {
-  background: url(../../../images/Union.svg);
+  background: url(../../../images/Union.svg) no-repeat;
   opacity: 1;
 }
