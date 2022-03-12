@@ -17,9 +17,9 @@ const profileJobInput = document.querySelector('.popup__input_profile_subtitle')
 const cardList = document.querySelector('.elements__items');
 
 const api = new Api({
-  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-36',
+  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-33',
   headers: {
-    authorization: '91bab0a1-95f4-4e2c-8186-9f03ec8012a1',
+    authorization: 'e4ee2037-6e1d-4a6c-990c-3cb9c7537a60',
     'Content-Type': 'application/json'
   }
 });
