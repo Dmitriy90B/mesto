@@ -45,30 +45,24 @@ function createCard(data) {
         .then((data) => {
           card.checkYourLikes(data);
         })
-        .catch((err) => {
-          console.log(`Ошибка при добавление лайка: ${err}`);
-        });
+        .catch(err => console.log(`Ошибка при добавление лайка: ${err}`));
     },
     handleDeleteLikeClick: (card) => {
       api.deleteLike(card)
         .then((data) => {
           card.checkYourLikes(data);
         })
-        .catch((err) => {
-          console.log(`Ошибка на отмену лайка: ${err}`);
-        });
+        .catch(err => console.log(`Ошибка на отмену лайка: ${err}`));
     },
     handleDeleteIconClick: (card) => {
       popupWithConfirmation.open();
       popupWithConfirmation.setSubmitHandlerChange(() => {
-        api.deleteCard(cardId)
+        api.deleteCard(card)
           .then(() => {
             popupWithConfirmation.close();
             card.deleteByTrash();
           })
-          .catch((err) => {
-            console.log(`Ошибка при клике на корзину: ${err}`);
-          });
+          .catch(err => console.log(`Ошибка при клике на корзину: ${err}`));
       });
     }
 
@@ -82,7 +76,7 @@ const defaultCardList = new Section({
     defaultCardList.addItem(cards);
   }
 }, cardList);
-defaultCardList.renderer();
+// defaultCardList.renderer();
 
 const userInfo = new UserInfo({
   profileName: '.profile__name',
