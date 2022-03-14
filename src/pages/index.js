@@ -35,7 +35,7 @@ Promise.all([api.getInitialCards(), api.getUserInfo()])
     userInfo.setUserAvatar({
       avatar: userData.avatar
     });
-    defaultCardList.renderer(cards);
+    defaultCardList.renderer(cards.reverse());
   })
   .catch(err => console.log(`Ошибка: ${err}`));
 
