@@ -72,14 +72,8 @@ export default class Card {
   }
 
   _setEventListeners() {
-    this._likeCard.addEventListener('click', () =>  {
-      if (this._likeCard.classList.contains('elements__like_active')) {
-        this._handleLikeClick(this._cardId);
-      } else {
-        this._handleDeleteLikeClick(this._cardId);
-      }
-    });
-    this._cardTrash.addEventListener('click', () => this._handleDeleteIconClick(this._cardId));  // _deleteByTrash (evt)
+   
+    this._cardTrash.addEventListener('click', () => this._handleDeleteIconClick(this));  // _deleteByTrash (evt)
     this._elementsItem.addEventListener('click', () => this._handleCardClick({
       link: this._link,
       name: this._name

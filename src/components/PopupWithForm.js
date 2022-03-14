@@ -20,7 +20,7 @@ export default class PopupWithForm extends Popup {
   };
 
   getLoadingSave(loadingSave) {
-    if (!loadingSave) {
+    if (loadingSave) {
       this._buttonSelector.textContent = 'Сохранение...';
     } else {
       this._buttonSelector.textContent = this._buttonDefault;

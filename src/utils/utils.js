@@ -7,4 +7,3 @@ const validationConfig = {
   inactiveButtonClass: 'popup__save-button_disabled',
   inputErrorClass: 'popup__input_error',
 };
-
