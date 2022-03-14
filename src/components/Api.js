@@ -73,7 +73,7 @@ export default class Api {
       method: 'PUT',
       headers: this._headers
     })
-    .then(this._parseResponse);
+    .then(res => this._getResponse(res));
   }
 
   deleteLike(cardId) {
@@ -81,6 +81,6 @@ export default class Api {
       method: 'DELETE',
       headers: this._headers
     })
-    .then(this._parseResponse);
+    .then(res => this._getResponse(res));
   }
 }
