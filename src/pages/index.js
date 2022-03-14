@@ -46,24 +46,22 @@ function createCard(initialCards) {
     handleCardClick: (item) => {
       popupWithImage.open(item);
     },
-    handleAddLikeClick: (card) => {
-      api.addLike(card)
-        .then((data) => {
-          card.checkYourLikes(card);
-        })
-        .catch(err => console.log(`Ошибка при добавление лайка: ${err}`));
-    },
-    handleDeleteLikeClick: (card) => {
-      api.deleteLike(card)
-        .then((data) => {
-          card.checkYourLikes(data);
-        })
-        .catch(err => console.log(`Ошибка на отмену лайка: ${err}`));
+    handleLikeClick: (card) => {
+      if (card.likeById()) {
+        api.deleteLike(card.cardId())
+          .then(res => card.checkYourLikes(res))
+          .catch(err => console.log(`Ошибка на отмену лайка: ${err}`));
+
+      } else {
+        api.addLike(card.cardId())
+          .then(res => card.checkYourLikes(res))
+          .catch(err => console.log(`Ошибка лайка: ${err}`));
+      }
     },
     handleDeleteIconClick: (card) => {
       popupWithConfirmation.open();
       popupWithConfirmation.setSubmitHandlerChange(() => {
-        api.deleteByTrash(card.getCardId())
+        api.deleteByTrash(card.cardId())
           .then(() => {
             card.deleteByTrash();
             popupWithConfirmation.close();
@@ -82,12 +80,6 @@ const defaultCardList = new Section({
     defaultCardList.addItem(cards);
   }
 }, cardList);
-
-// const defaultCardList = new Section({
-//   renderer: (item) => {
-//     defaultCardList.addItem(createCard(item));
-//   }
-// }, cardList);
 
 const userInfo = new UserInfo({
   profileName: '.profile__name',
@@ -148,7 +140,6 @@ popupAvatarForm.setEventListeners();
 
 const popupWithConfirmation = new PopupWithConfirmation({
   popupSelector: '.popup_type_delete',
-  // handleFormSubmit: () => {}
 });
 popupWithConfirmation.setEventListeners();
 

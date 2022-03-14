@@ -1,5 +1,5 @@
 export default class Card {
-  constructor({data, handleCardClick, handleAddLikeClick, handleDeleteLikeClick, handleDeleteIconClick}, cardSelector) {
+  constructor({data, handleCardClick, handleLikeClick, handleDeleteIconClick}, cardSelector) {
     this._name = data.name;
     this._link = data.link;
     this._likes = data.likes;
@@ -8,8 +8,7 @@ export default class Card {
     this._ownerId = data.owner._id;
     this._cardSelector = cardSelector;
     this._handleCardClick = handleCardClick;
-    this._handleLikeClick = handleAddLikeClick;
-    this._handleDeleteLikeClick = handleDeleteLikeClick;
+    this._handleLikeClick = handleLikeClick;
     this._handleDeleteIconClick = handleDeleteIconClick;
   }
 
@@ -36,27 +35,25 @@ export default class Card {
     return this._element;
   }
 
+  likeById() {
+    return this._likes.some((item) => item._id === this._userId);
+  }
 
   _likeToggle() {
     this._element.querySelector('.elements__likes').textContent = this._likes.length;
-    if (this._likeById()) {
+    if (this.likeById()) {
       this._likeCard.classList.add('elements__like_active');
     } else {
       this._likeCard.classList.remove('elements__like_active');
     }
   }
 
-   _likeById() {
-    return this._likes.some((item) => item._id === this._userId);
-  }
-
-  // ПРОВЕРИТЬ ЛАЙКИ
   checkYourLikes(data) {
     this._likes = data.likes;
     this._likeToggle();
   }
 
-  getCardId() {
+  cardId() {
     return this._cardId;
   }
 
@@ -72,8 +69,8 @@ export default class Card {
   }
 
   _setEventListeners() {
-   
-    this._cardTrash.addEventListener('click', () => this._handleDeleteIconClick(this));  // _deleteByTrash (evt)
+    this._likeCard.addEventListener('click', () => this._handleLikeClick(this));
+    this._cardTrash.addEventListener('click', () => this._handleDeleteIconClick(this));
     this._elementsItem.addEventListener('click', () => this._handleCardClick({
       link: this._link,
       name: this._name
